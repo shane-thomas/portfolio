@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       const heroSection = document.querySelector('section');
       if (heroSection) {
         const heroHeight = heroSection.offsetHeight;
-        setShowNavbar(window.scrollY > heroHeight * 0.95);
+        setShowNavbar(window.scrollY > heroHeight * 0.80);
       }
     };
 
