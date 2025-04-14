@@ -6,36 +6,15 @@ import ProjectCard from "./components/ProjectCard";
 
 const projects = [
   {
-    title: "Machine Learning Project",
-    description: "A project that uses machine learning to predict outcomes.",
-    imageUrl: "/path-to-image.jpg",
-    badges: ["Python", "TensorFlow", "Machine Learning"],
-    githubLink: "https://github.com/yourusername/ml-project",
-    websiteUrl: "https://yourwebsite.com", // Optional: if the project has a website
+    title: "ClearSky",
+    description:
+      "A React app providing real-time weather updates with a user-friendly interface. Features include light/dark mode toggle, smooth routing using React Router, and responsive design",
+    imageUrl: "/projects/clear-sky.png",
+    badges: ["React", "API", "GitHub Pages"],
+    githubLink: "https://github.com/shane-thomas/clear-sky",
+    websiteUrl: "https://shane-thomas.github.io/clear-sky/", // Optional: if the project has a website
   },
-  {
-    title: "Deep Learning Model",
-    description: "A deep learning model for image classification.",
-    imageUrl: "/path-to-image.jpg",
-    badges: ["Python", "Keras", "Deep Learning"],
-    githubLink: "https://github.com/yourusername/deep-learning-model",
-    websiteUrl: "", // Empty: no website for this project
-  },
-  {
-    title: "Machine Learning Project",
-    description: "A project that uses machine learning to predict outcomes.",
-    imageUrl: "/path-to-image.jpg",
-    badges: ["Python", "TensorFlow", "Machine Learning"],
-    githubLink: "https://github.com/yourusername/ml-project",
-    websiteUrl: "https://yourwebsite.com", // Optional: if the project has a website
-  },{
-    title: "Machine Learning Project",
-    description: "A project that uses machine learning to predict outcomes.",
-    imageUrl: "/path-to-image.jpg",
-    badges: ["Python", "TensorFlow", "Machine Learning"],
-    githubLink: "https://github.com/yourusername/ml-project",
-    websiteUrl: "https://yourwebsite.com", // Optional: if the project has a website
-  },
+  
   // More projects...
 ];
 
