@@ -83,7 +83,7 @@ export default function Home() {
         id="hero"
         ref={heroRef}
         className="h-screen bg-black text-white flex-col flex p-10 justify-center"
-        style={{ backgroundImage: "url('/background.png')" }}
+        style={{ backgroundImage: "url('/bg.png')" }}
       >
         <h1 className="text-5xl font-bold mb-3">
           <span className="tracking-wide bg-white text-transparent bg-clip-text">
