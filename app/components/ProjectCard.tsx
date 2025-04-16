@@ -34,7 +34,9 @@ const ProjectCard = ({
         <Image
           src={imageUrl}
           alt={title}
-          className="w-full aspect-[16/9] object-cover"
+          width={1920}
+          height={1080}
+          className="aspect-[16/9] object-cover"
         />
 
         <div className="flex flex-col flex-grow px-4 pb-4">

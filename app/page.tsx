@@ -59,11 +59,11 @@ export default function Home() {
       } else {
         clearInterval(typingInterval);
       }
-    }, 100); // Adjust typing speed here (lower = faster)
+    }, 600); // Adjust typing speed here (lower = faster)
 
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 300);
+    }, 100);
 
     return () => {
       clearInterval(typingInterval);
@@ -83,6 +83,7 @@ export default function Home() {
         id="hero"
         ref={heroRef}
         className="h-screen bg-black text-white flex-col flex p-10 justify-center"
+        style={{ backgroundImage: "url('/background.png')" }}
       >
         <h1 className="text-5xl font-bold mb-3">
           <span className="tracking-wide bg-white text-transparent bg-clip-text">
@@ -97,10 +98,10 @@ export default function Home() {
           </span>
         </h1>
 
-        <h2 className="text-2xl text-gray-400 font-medium tracking-wide mb-3">
+        <h2 className="text-xl text-gray-400 font-medium tracking-wide mb-3">
           Student at VIT, Vellore
         </h2>
-        <h3 className="text-2xl text-gray-400 font-normal tracking-wide mb-3">
+        <h3 className="text-xl text-gray-400 font-normal tracking-wide mb-3">
           Machine Learning | Web Development | App Development
         </h3>
         <div className="flex items-center gap-6">
@@ -157,8 +158,7 @@ export default function Home() {
         <p className="mb-6 leading-relaxed tracking-wide">
           I am a third-year undergraduate student at Vellore Institute of
           Technology with a strong passion for technology and innovation. My
-          interests span across front-end development, emerging industry trends,
-          and machine learning.
+          interests span across front-end development and machine learning.
         </p>
         <p className="mb-6 leading-relaxed tracking-wide">
           Driven by curiosity and a growth mindset, I am always keen to explore
