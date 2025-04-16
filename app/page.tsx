@@ -1,10 +1,28 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronDown, FileDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import ProjectCard from "./components/ProjectCard";
 
 const projects = [
+  {
+    title: "HerWay",
+    description:
+      "Created a safety-focused MVP in a 2-day hackathon using React Native, allowing women to review and rate how safe different locations are. and rate how safe different locations are. The app used Firebase to store ratings and displayed heatmaps on native iOS and Android maps to visually represent safety levels.",
+    imageUrl: "/projects/her-way.png",
+    badges: ["React Native", "Expo", "Firebase"],
+    githubLink: "https://github.com/shane-thomas/women-techies-24",
+    websiteUrl: "", // Optional: if the project has a website
+  },
+  {
+    title: "Breakout Stock Screener",
+    description:
+      "A Python-based stock screener inspired by Mark Minervini's Volume Dry-Up (VDU) and Volatility Contraction Pattern (VCP) concepts. The program identifies stocks exhibiting significant volume compression, signaling potential imminent breakouts ideal for swing trading setups.",
+    imageUrl: "/projects/stock.png",
+    badges: ["Python", "API", "requests", "Pandas"],
+    githubLink: "https://github.com/shane-thomas/breakout-stock-screener",
+    websiteUrl: "", // Optional: if the project has a website
+  },
   {
     title: "ClearSky",
     description:
@@ -14,31 +32,60 @@ const projects = [
     githubLink: "https://github.com/shane-thomas/clear-sky",
     websiteUrl: "https://shane-thomas.github.io/clear-sky/", // Optional: if the project has a website
   },
-  
+
   // More projects...
 ];
 
 export default function Home() {
   const heroRef = useRef<HTMLElement | null>(null);
+  const fullName = "Shane Shaji Thomas";
+  const [displayText, setDisplayText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    // Type out the name one character at a time
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index < fullName.length) {
+        setDisplayText(fullName.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100); // Adjust typing speed here (lower = faster)
+
+    // Blink the cursor
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 300);
+
+    return () => {
+      clearInterval(typingInterval);
+      clearInterval(cursorInterval);
+    };
+  }, []);
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
+      <title>Shane Shaji Thomas</title>
       {/*HERO */}
       <section
         id="hero"
         ref={heroRef}
-        className="h-screen bg-gradient-to-b from-gray-600 via-gray-900 to-black text-white flex-col flex items-center justify-center gap-5"
+        className="h-screen bg-black text-white flex-col flex p-10 justify-center gap-5"
       >
         <h1 className="text-5xl font-bold">
-          <span className=" tracking-wide bg-gradient-to-r from-[#e9e9e9] via-[#9a9a9a] to-[#707070] text-white bg-clip-text">
-            Shane Shaji Thomas
+          <span className="tracking-wide bg-white text-transparent bg-clip-text">
+            {displayText}
+            <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100 ml-1`}>|</span>
           </span>
         </h1>
 
-        <h2 className="text-3xl text-gray-400 font-medium tracking-wide">
+        <h2 className="text-2xl text-gray-400 font-medium tracking-wide">
           Student at VIT, Vellore
         </h2>
         <h3 className="text-2xl text-gray-400 font-normal tracking-wide">
@@ -74,13 +121,12 @@ export default function Home() {
             />
           </a>
           <a
-            href="/resume.pdf"
-            download
+            href="https://drive.google.com/file/d/1W1FSaB47SQMp92GI9I_-EBgjZz4I6JsN/view"
+            target="_blank"
             className="text-white hover:text-gray-400 transition-colors border-b border-gray-700 hover:border-gray-400 inline-flex items-center gap-2"
-            aria-label="Download Resume"
           >
             <span>View Resume</span>
-            <FileDown size={16} />
+            {/* <FileDown size={16} /> */}
           </a>
         </div>
         <ChevronDown
@@ -115,14 +161,14 @@ export default function Home() {
           technology. Feel free to email me at{" "}
           <a
             href="mailto:shaneshaji10@gmail.com"
-            className="border-b inline-block"
+            className="border-b inline-block opacity-[0.7]"
           >
             shaneshaji10@gmail.com
           </a>{" "}
           or reach out to me on my Linkedin!
         </p>
 
-        <div className="my-5 py-5 flex space-x-6 items-center border-y-1 border-gray-700">
+        <div className="my-5 py-5 flex space-x-10 items-center border-y-1 border-gray-700">
           <a
             href="https://github.com/shane-thomas"
             target="_blank"
@@ -152,13 +198,12 @@ export default function Home() {
             />
           </a>
           <a
-            href="/resume.pdf"
-            download
+            target="_blank"
+            href="https://drive.google.com/file/d/1W1FSaB47SQMp92GI9I_-EBgjZz4I6JsN/view"
             className=" tracking-wide text-white hover:text-gray-400 transition-colors border-b border-gray-700 hover:border-gray-400 inline-flex items-center gap-2"
-            aria-label="Download Resume"
           >
             <span>View resume</span>
-            <FileDown size={16} />
+            {/* <FileDown size={16} /> */}
           </a>
         </div>
 
