@@ -59,11 +59,11 @@ export default function Home() {
       } else {
         clearInterval(typingInterval);
       }
-    }, 600); // Adjust typing speed here (lower = faster)
+    }, 50); // Adjust typing speed here (lower = faster)
 
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 100);
+    }, 200);
 
     return () => {
       clearInterval(typingInterval);
