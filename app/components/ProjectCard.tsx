@@ -8,6 +8,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface CardProps {
   title: string;
@@ -30,7 +31,7 @@ const ProjectCard = ({
     <div className="p-0 rounded-lg overflow-hidden bg-black text-white transition hover:bg-zinc-900 h-full border border-white">
       <Card className="h-full w-full bg-transparent text-white p-0 shadow-none flex flex-col border-none">
         {/* Image */}
-        <img
+        <Image
           src={imageUrl}
           alt={title}
           className="w-full aspect-[16/9] object-cover"

@@ -162,7 +162,7 @@ export default function Home() {
         </p>
         <p className="mb-6 leading-relaxed tracking-wide">
           Driven by curiosity and a growth mindset, I am always keen to explore
-          new technologies—whether it's a modern framework, a programming
+          new technologies—whether it&apos;s a modern framework, a programming
           language, or a tool that can enhance development workflows. Outside
           academics and projects, I enjoy gaming and continuously learning
           across a range of topics that pique my interest.

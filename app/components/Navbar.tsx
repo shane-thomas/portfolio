@@ -22,7 +22,7 @@ const Navbar = ({ show }: Props) => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['hero', 'about', 'projects'];
-      for (let id of sections) {
+      for (const id of sections) {
         const el = document.getElementById(id);
         if (el) {
           const top = el.offsetTop;
