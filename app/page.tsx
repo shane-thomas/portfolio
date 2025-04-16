@@ -6,13 +6,22 @@ import ProjectCard from "./components/ProjectCard";
 
 const projects = [
   {
+    title: "Local PDF Chat RAG App",
+    description:
+      "This is a simple PDF question-answering app built with Langchain, on a local language model running through Ollama. You can upload any PDF file and ask questions about it and the app will pull out relevant information and give short, helpful answers.",
+    imageUrl: "/projects/pdf-rag.png",
+    badges: ["streamlit", "LangChain", "Ollama", "RAG"],
+    githubLink: "https://github.com/shane-thomas/pdf-chat-rag",
+    websiteUrl: "", 
+  },
+  {
     title: "HerWay",
     description:
       "Created a safety-focused MVP in a 2-day hackathon using React Native, allowing women to review and rate how safe different locations are. and rate how safe different locations are. The app used Firebase to store ratings and displayed heatmaps on native iOS and Android maps to visually represent safety levels.",
     imageUrl: "/projects/her-way.png",
     badges: ["React Native", "Expo", "Firebase"],
     githubLink: "https://github.com/shane-thomas/women-techies-24",
-    websiteUrl: "", // Optional: if the project has a website
+    websiteUrl: "", 
   },
   {
     title: "Breakout Stock Screener",
@@ -21,7 +30,7 @@ const projects = [
     imageUrl: "/projects/stock.png",
     badges: ["Python", "API", "requests", "Pandas"],
     githubLink: "https://github.com/shane-thomas/breakout-stock-screener",
-    websiteUrl: "", // Optional: if the project has a website
+    websiteUrl: "", 
   },
   {
     title: "ClearSky",
@@ -30,15 +39,13 @@ const projects = [
     imageUrl: "/projects/clear-sky.png",
     badges: ["React", "API", "GitHub Pages"],
     githubLink: "https://github.com/shane-thomas/clear-sky",
-    websiteUrl: "https://shane-thomas.github.io/clear-sky/", // Optional: if the project has a website
+    websiteUrl: "https://shane-thomas.github.io/clear-sky/", 
   },
-
-  // More projects...
 ];
 
 export default function Home() {
   const heroRef = useRef<HTMLElement | null>(null);
-  const fullName = "Shane Shaji Thomas";
+  const fullName = "Hello! I am Shane Shaji Thomas";
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
 
@@ -54,9 +61,8 @@ export default function Home() {
       }
     }, 100); // Adjust typing speed here (lower = faster)
 
-    // Blink the cursor
     const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev);
+      setShowCursor((prev) => !prev);
     }, 300);
 
     return () => {
@@ -76,19 +82,25 @@ export default function Home() {
       <section
         id="hero"
         ref={heroRef}
-        className="h-screen bg-black text-white flex-col flex p-10 justify-center gap-5"
+        className="h-screen bg-black text-white flex-col flex p-10 justify-center"
       >
-        <h1 className="text-5xl font-bold">
+        <h1 className="text-5xl font-bold mb-3">
           <span className="tracking-wide bg-white text-transparent bg-clip-text">
             {displayText}
-            <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100 ml-1`}>|</span>
+            <span
+              className={`${
+                showCursor ? "opacity-100" : "opacity-0"
+              } transition-opacity duration-100 ml-1`}
+            >
+              |
+            </span>
           </span>
         </h1>
 
-        <h2 className="text-2xl text-gray-400 font-medium tracking-wide">
+        <h2 className="text-2xl text-gray-400 font-medium tracking-wide mb-3">
           Student at VIT, Vellore
         </h2>
-        <h3 className="text-2xl text-gray-400 font-normal tracking-wide">
+        <h3 className="text-2xl text-gray-400 font-normal tracking-wide mb-3">
           Machine Learning | Web Development | App Development
         </h3>
         <div className="flex items-center gap-6">
@@ -203,7 +215,6 @@ export default function Home() {
             className=" tracking-wide text-white hover:text-gray-400 transition-colors border-b border-gray-700 hover:border-gray-400 inline-flex items-center gap-2"
           >
             <span>View resume</span>
-            {/* <FileDown size={16} /> */}
           </a>
         </div>
 
@@ -223,7 +234,7 @@ export default function Home() {
           </li>
           <li>
             <strong>Python Libraries:</strong> scikit-learn, Pandas, NumPy,
-            pyTorch, tensorflow, requests, Selenium, BeautifulSoup, tqdm, opencv
+            pyTorch, tensorflow, requests, Selenium, BeautifulSoup, opencv, streamlit, LangChain
           </li>
         </ul>
       </section>
@@ -243,7 +254,7 @@ export default function Home() {
               imageUrl={project.imageUrl}
               badges={project.badges}
               githubLink={project.githubLink}
-              websiteUrl={project.websiteUrl} // Pass the website URL if available
+              websiteUrl={project.websiteUrl} 
             />
           ))}
         </div>
