@@ -6,6 +6,15 @@ import ProjectCard from "./components/ProjectCard";
 
 const projects = [
   {
+    title: "Fine Sentiment Analysis",
+    description:
+      "A full pipeline for multi-class sentiment analysis using neural networks and DistilBERT embeddings. Given a dataset of text reviews, it preprocesses the data, extracts embeddings using a pre-trained transformer, trains a custom neural network classifier, and evaluates its performance.",
+    imageUrl: "/projects/sentiment-analysis.png",
+    badges: ["torch", "NLP", "Jupyter", "huggingface"],
+    githubLink: "https://github.com/shane-thomas/sentiment-analysis",
+    websiteUrl: "", 
+  },
+  {
     title: "Local PDF Chat RAG App",
     description:
       "This is a simple PDF question-answering app built with Langchain, on a local language model running through Ollama. You can upload any PDF file and ask questions about it and the app will pull out relevant information and give short, helpful answers.",
